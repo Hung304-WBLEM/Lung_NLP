@@ -1,4 +1,4 @@
-# Lung-NLP
+# Lung_NLP
 
 ## Install environment using conda package
 ```
