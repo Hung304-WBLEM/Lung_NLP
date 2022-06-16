@@ -4,11 +4,11 @@ import math
 import random
 
 from collections import defaultdict
-from ClinicalReports.source.model_init import init_clinical_model, init_model
-from ClinicalReports.source.rules import get_nodule_lung_loc, get_nodule_lung_size
-from ClinicalReports.source.rules import get_nodule_lung_spiculation, get_nodule_lung_contour
-from ClinicalReports.source.rules import get_nodule_lung_fissure, get_nodule_lung_pleural
-from ClinicalReports.source.rules import count_nodule_lung
+from Lung_NLP.source.model_init import init_clinical_model, init_model
+from Lung_NLP.source.rules import get_nodule_lung_loc, get_nodule_lung_size
+from Lung_NLP.source.rules import get_nodule_lung_spiculation, get_nodule_lung_contour
+from Lung_NLP.source.rules import get_nodule_lung_fissure, get_nodule_lung_pleural
+from Lung_NLP.source.rules import count_nodule_lung
 from ordered_set import OrderedSet
 
 	
