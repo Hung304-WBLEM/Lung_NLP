@@ -4,18 +4,19 @@ import math
 import random
 
 from collections import defaultdict
-from ClinicalReports.source.model_init import init_clinical_model, init_model
-from ClinicalReports.source.rules import get_nodule_lung_loc, get_nodule_lung_size
-from ClinicalReports.source.rules import get_nodule_lung_spiculation, get_nodule_lung_contour
-from ClinicalReports.source.rules import get_nodule_lung_fissure, get_nodule_lung_pleural
-from ClinicalReports.source.rules import count_nodule_lung, convert_size_cm2mm
+from Lung_NLP.source.model_init import init_clinical_model, init_model
+from Lung_NLP.source.rules import get_nodule_lung_loc, get_nodule_lung_size
+from Lung_NLP.source.rules import get_nodule_lung_spiculation, get_nodule_lung_contour
+from Lung_NLP.source.rules import get_nodule_lung_fissure, get_nodule_lung_pleural
+from Lung_NLP.source.rules import count_nodule_lung, convert_size_cm2mm
 from ordered_set import OrderedSet
 
 	
 model = init_model()
 clinical_model = init_clinical_model()
 
-path = '/home/hqvo2/Projects/ClinicalReports/data/lung/AllLungCases.04.22.22.xlsx'
+path = '/home/hqvo2/Projects/Lung_NLP/data/AllLungCases.04.22.22.xlsx'
+save_path = '/home/hqvo2/Projects/Lung_NLP/results/clinical_feats_test.csv'
 df = pd.read_excel(path)
 save_data = dict() 
 save_data = defaultdict(lambda: [], save_data)
@@ -110,4 +111,4 @@ print('#Total reports:', total_reports, '|'
       '#Nan reports:', nan_reports, '|'
       '#External reports:', external_reports, '|')
 df = pd.DataFrame(save_data)
-df.to_csv('clinical_feats_v6.csv')
+df.to_csv(save_path)
